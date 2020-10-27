@@ -49,9 +49,28 @@ export class DetailsRequestService {
         this.user.repos = 0;
         this.user.createdate = new Date();
         this.user.updatedate = new Date();
-      }
+        reject(error);
       })
-    }
+    })
+    return promise;
   }
+
+  repoRequest(){
+    interface ApiResponse{
+       name:string,
+       full_name:string,
+       owner:string,
+       description:string,
+       url:string
+    }
+let promise = new Promise((resolve,reject)=>{
+  this.http.get<ApiResponse>(environment.repositoryUrl).toPromise().then(response=>{
+    this.repos.name = response.name
+    this.repos.full_name = response.full_name
+    this.repos.owner = response.owner
+    this.repos.description = response.description
+    this.repos.url = response.url
+  })
+}
   }
 }
