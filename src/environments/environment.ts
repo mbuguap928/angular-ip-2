@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apikey: "b75b8762bcc816c5bd56ce8cc0a6f516a7393d03"
+  apikey: "b75b8762bcc816c5bd56ce8cc0a6f516a7393d03",
+  gitHubUrl: "https://api.github.com/users/mbuguap928?access_token=b75b8762bcc816c5bd56ce8cc0a6f516a7393d03",
+  repositoryUrl:"https://api.github.com/users/mbuguap928/repos#",
 };
 
 /*
