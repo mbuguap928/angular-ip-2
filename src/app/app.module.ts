@@ -9,6 +9,7 @@ import { ReposComponent } from './repos/repos.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { AboutComponent } from './about/about.component';
+import { GithubServiceComponent } from './github-service/github-service.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AboutComponent } from './about/about.component';
     ReposComponent,
     NotfoundComponent,
     UserdetailsComponent,
-    AboutComponent
+    AboutComponent,
+    GithubServiceComponent
   ],
   imports: [
     BrowserModule,
