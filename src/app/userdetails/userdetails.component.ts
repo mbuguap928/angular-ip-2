@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
+import { User } from '../user'
+import { ClearService } from '../clear.service'
 
 @Component({
   selector: 'app-userdetails',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserdetailsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  
+  user: User;
+ 
+ constructor(private gitHubRequest: ClearService) {}
+ 
+ ngOnInit() {
+ this.gitHubRequest.gitHubUsersRequest();
+ this.user = this.gitHubRequest.user;
+ }
 
 }
