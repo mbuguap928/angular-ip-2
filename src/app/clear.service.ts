@@ -157,4 +157,4 @@ export class ClearService {
     });
     return gitHubReposPromise;
     }}
-}
+
