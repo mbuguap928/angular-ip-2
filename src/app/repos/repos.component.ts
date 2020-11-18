@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Repository } from '../repository'
+import { ClearService } from '../clear.service'
 
 @Component({
   selector: 'app-repos',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReposComponent implements OnInit {
 
-  constructor() { }
+  repos: Repository[];
+ constructor(private gitHubRequest: ClearService) {}
+ 
+ ngOnInit() {
+ this.gitHubRequest.gitHubReposRequest();
+ this.repos = this.gitHubRequest.repos;
+ }
 
-  ngOnInit(): void {
-  }
+ 
 
 }
